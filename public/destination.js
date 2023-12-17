@@ -85,30 +85,28 @@ async function setupPushSubscription(destination) {
             // Check if the existing subscription is for the desired destination
             const isSubscribedToDestination = await checkIfSubscribedToDestination(sub, destination);
             if (isSubscribedToDestination) {
-                alert('You are already subscribed to ' + destination);
+                alert('You are already subscribed to ' + destination.replace(/_/g, ' ')
+                    .replace(/\b\w/g, (char) => char.toUpperCase()));
                 return;
             }
         }
 
         if (sub === null) {
-            const publicKey = 'BJ7yRPikwuWdlfO06ci4ZyHRVc10RmLkc2H9j1wYJXrWr8O1-c0Yj7MPamWd58k0sxF0v3eoMKp4fUde75fHyIY';
+            const publicKey = 'BKJIECQfeKms1haBCbmfGeBhfBOPr5l4wTt-t9rLzhd-n10ikf0sF0hAzaYrEVdZmqdwvug-TSp1uLw4XCsaOQw';
             sub = await reg.pushManager.subscribe({
-                userVisibleOnly: true,
-                applicationServerKey: urlBase64ToUint8Array(publicKey)
+                userVisibleOnly: true, applicationServerKey: urlBase64ToUint8Array(publicKey)
             });
         }
 
         const res = await fetch('/save-subscription?destination=' + destination, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json',
-            },
-            body: JSON.stringify({sub}),
+            method: 'POST', headers: {
+                'Content-Type': 'application/json', 'Accept': 'application/json',
+            }, body: JSON.stringify({sub}),
         });
 
         if (res.ok) {
-            alert('You are now subscribed to ' + destination);
+            alert('You are now subscribed to ' + destination.replace(/_/g, ' ')
+                .replace(/\b\w/g, (char) => char.toUpperCase()));
         } else {
             console.log('Subscription failed:', res.status);
         }
@@ -120,12 +118,9 @@ async function setupPushSubscription(destination) {
 
 async function checkIfSubscribedToDestination(subscription, destination) {
     const res = await fetch('/check-subscription?destination=' + destination, {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-            'Accept': 'application/json',
-        },
-        body: JSON.stringify({subscription}),
+        method: 'POST', headers: {
+            'Content-Type': 'application/json', 'Accept': 'application/json',
+        }, body: JSON.stringify({subscription}),
     });
 
     if (res.ok) {
