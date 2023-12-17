@@ -131,7 +131,3 @@ async function checkIfSubscribedToDestination(subscription, destination) {
     console.error('Error checking subscription:', res.status);
     return false;
 }
-
-// TODO everything that is left to do
-// solution in edgar
-// push to git and deploy

@@ -1,7 +1,7 @@
 {
-  "name": "PWA-EventsNearMe",
-  "short_name": "EventsNearMe",
-  "description": "Application for finding events near me",
+  "name": "PWA-DZ5-Destinations",
+  "short_name": "Destinations",
+  "description": "Application for sharing adventure photos",
   "display": "fullscreen",
   "theme_color": "red",
   "background_color": "#DDD",
