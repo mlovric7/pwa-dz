@@ -1,0 +1,48 @@
+{
+  "name": "PWA-EventsNearMe",
+  "short_name": "EventsNearMe",
+  "description": "Application for finding events near me",
+  "display": "fullscreen",
+  "theme_color": "red",
+  "background_color": "#DDD",
+  "start_url": "/index.html",
+  "scope": ".",
+  "orientation": "portrait-primary",
+  "dir": "ltr",
+  "lang": "en-US",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "webapp",
+      "url": "https://edgar.fer.hr",
+      "id": "hr.fer.edgar"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/assets/img/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/android-chrome-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/apple-touch-icon.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-16x16.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/img/favicon-32x32.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}

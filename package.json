@@ -1,0 +1,19 @@
+{
+  "name": "pwa-dz5",
+  "version": "1.0.0",
+  "description": "Application for keeping pictures of game collections",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "serve": "node server.js",
+    "gen-vapid": "web-push generate-vapid-keys"
+  },
+  "author": "marijanlovric",
+  "dependencies": {
+    "express": "^4.17.1",
+    "fs-extra": "^10.0.0",
+    "multer": "^1.4.3",
+    "nodemon": "^2.0.12",
+    "web-push": "^3.4.5"
+  }
+}
